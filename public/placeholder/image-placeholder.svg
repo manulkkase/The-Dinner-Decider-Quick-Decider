@@ -1,8 +1,0 @@
-
-<svg width="100%" height="100%" viewBox="0 0 400 225" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="placeholder-title">
-<title id="placeholder-title">Placeholder for a food image</title>
-<rect width="400" height="225" fill="#E5E7EB"/>
-<path d="M140 102C140 95.3726 145.373 90 152 90H248C254.627 90 260 95.3726 260 102V138C260 144.627 254.627 150 248 150H152C145.373 150 140 144.627 140 138V102Z" stroke="#9CA3AF" stroke-width="2"/>
-<path d="M164 126L188 108L216 130L230 122L248 134" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="168" cy="108" r="4" fill="#9CA3AF"/>
-</svg>
