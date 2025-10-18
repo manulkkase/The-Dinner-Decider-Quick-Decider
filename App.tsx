@@ -46,9 +46,18 @@ const App: React.FC = () => {
   }, [suggestion, fetchSuggestion]);
 
   const handleViewDetails = () => {
-    if (suggestion && chrome && chrome.tabs) {
-      const url = buildPrimaryUrl(suggestion, sessionId);
+    if (!suggestion) return; // 음식이 없으면 중단
+
+    // 1. URL은 항상 똑같이 만듭니다.
+    const url = buildPrimaryUrl(suggestion, sessionId);
+
+    // 2. 실행 환경을 확인합니다.
+    if (typeof chrome !== 'undefined' && chrome.tabs) {
+      // 3. (A) 익스텐션 환경일 경우: 특별한 API로 새 탭 열기
       chrome.tabs.create({ url });
+    } else {
+      // 3. (B) localhost 개발 환경일 경우: 일반적인 방식으로 새 탭 열기
+      window.open(url, '_blank', 'noopener,noreferrer');
     }
   };
 

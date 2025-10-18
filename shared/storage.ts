@@ -5,7 +5,16 @@ declare const chrome: any;
 
 const RECENT_MENUS_KEY = 'dinnerDeciderRecent';
 const DISLIKED_MENUS_KEY = 'dinnerDeciderDisliked';
+const SESSION_ID_KEY = 'tdd_session_id';
 
+export const getSessionId = (): string => {
+  let sessionId = localStorage.getItem(SESSION_ID_KEY);
+  if (!sessionId) {
+    sessionId = crypto.randomUUID(); // 내장된 고유 ID 생성기
+    localStorage.setItem(SESSION_ID_KEY, sessionId);
+  }
+  return sessionId;
+};
 // Use chrome.storage.local for persistence across browser sessions.
 // Fallback to localStorage for development environments where the chrome API isn't available.
 const storage = (chrome && chrome.storage && chrome.storage.local) ? chrome.storage.local : {

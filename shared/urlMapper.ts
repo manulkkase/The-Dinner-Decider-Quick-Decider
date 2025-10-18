@@ -13,9 +13,10 @@ const createSlug = (name: string): string => {
 
 
 export const buildPrimaryUrl = (item: MenuItem, sessionId: string): string => {
-  // websitePath is also gone, so we always use the search path fallback.
+  // 1. slug와 URL 경로를 /result/음식이름 으로 만듭니다.
   const slug = createSlug(item.name);
-  const path = `${SEARCH_PATH}?q=${encodeURIComponent(item.name)}`;
+  const encodedFoodName = encodeURIComponent(item.name);
+  const path = `${SEARCH_PATH}/${encodedFoodName}`;
   const baseUrl = `${WEBSITE_BASE_URL}${path.startsWith('/') ? '' : '/'}${path}`;
   
   const url = new URL(baseUrl);

@@ -4,6 +4,7 @@ import { PrimaryButton } from './PrimaryButton';
 import { SecondaryButton } from './SecondaryButton';
 import { ImageWithFallback } from './ImageWithFallback';
 
+
 interface MenuCardProps {
   item: MenuItem;
   onPrimaryClick: () => void;
