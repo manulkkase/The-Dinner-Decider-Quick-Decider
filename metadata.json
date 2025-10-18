@@ -1,0 +1,5 @@
+{
+  "name": "The Dinner Decider — Quick Decider",
+  "description": "A Chrome Extension that instantly recommends a popular global dish. It shows the menu name, a representative image, and a primary button to view details and recipes on the main website, helping you solve the 'what's for dinner?' dilemma with a single click.",
+  "requestFramePermissions": []
+}
